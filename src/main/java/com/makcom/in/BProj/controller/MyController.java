@@ -20,7 +20,7 @@ public class MyController {
 	public List<User> getStarted() {
 		return jpaRepo.findAll();
 	}
-
+	@CrossOrigin(origins = "http://localhost:3000")
 	@PostMapping("/user")
 	public void Save(@RequestBody User user){
 		jpaRepo.save(user);
