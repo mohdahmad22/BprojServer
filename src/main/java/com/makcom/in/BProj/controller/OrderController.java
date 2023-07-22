@@ -5,6 +5,7 @@ import com.makcom.in.BProj.Order.Order;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class OrderController {
@@ -26,6 +27,12 @@ private OrderJpa orderRepo;
     @DeleteMapping("/order/{id}")
     public void deleteOrder(@PathVariable Integer id){
         orderRepo.deleteById(id);
+    }
+
+    @CrossOrigin(origins = "http://localhost:3000")
+    @GetMapping("/order/{id}")
+    public Optional<Order> getOrderByID(@PathVariable Integer id){
+        return orderRepo.findById(id);
     }
 
 }

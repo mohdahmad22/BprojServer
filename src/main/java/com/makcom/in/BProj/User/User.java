@@ -12,15 +12,17 @@ public class User {
     @GeneratedValue
     private int user_d;
     private String address;
+    private String password;
 
     public User(){
 
     }
 
-    public User(String name, int user_d, String address) {
+    public User(String name, int user_d, String address,String password) {
         this.name = name;
         this.user_d = user_d;
         this.address = address;
+        this.password=password;
     }
 
     public String getName() {
@@ -45,5 +47,13 @@ public class User {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }
